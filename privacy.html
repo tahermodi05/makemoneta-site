@@ -9,17 +9,29 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Moneta home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#17392f"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#b7791f" stroke-width="2"/><path d="M19 43V22l13 13 13-13v21" fill="none" stroke="#f6f2ea" stroke-width="5" stroke-linecap="square"/></svg>
-      <span>Moneta</span>
-    </a>
-    <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a class="btn btn-primary btn-small" href="https://wa.me/919909252362" target="_blank" rel="noopener">WhatsApp us</a></nav>
+    <a class="brand" href="index.html" aria-label="Moneta home"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#7b5cff"/><path d="M19 43V22l13 13 13-13v21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="square"/></svg><span>Moneta</span></a>
+    <button class="menu-btn" type="button" aria-label="Open menu" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="our-work.html">Our Work</a>
+      <a href="ugc.html">UGC</a>
+      <a href="courses.html">Courses</a>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-haspopup="true">Free Audits</button>
+        <div class="dd-menu">
+          <a href="ad-account-audit.html">Ad Account Audit</a>
+          <a href="landing-page-audit.html">Landing Page Audit</a>
+        </div>
+      </div>
+      <a href="careers.html">Careers</a>
+      <a class="btn btn-primary btn-small" href="index.html#audit">Let's Connect</a>
+    </nav>
   </div>
 </header>
 
@@ -64,8 +76,20 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>© 2026 Moneta, Rajkot, Gujarat. <a href="mailto:hello@makemoneta.com">hello@makemoneta.com</a></div>
-    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+    <div class="foot-grid foot-4">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:12px"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:26px;height:26px"><circle cx="32" cy="32" r="30" fill="#7b5cff"/><path d="M19 43V22l13 13 13-13v21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="square"/></svg><span>Moneta</span></a>
+        <p>Performance marketing agency. Based in India, working worldwide.</p>
+        <p><a href="https://wa.me/919909252362" target="_blank" rel="noopener" style="display:inline;color:var(--text)">WhatsApp +91 99092 52362</a><br><a href="mailto:hello@makemoneta.com" style="display:inline;color:var(--text)">hello@makemoneta.com</a></p>
+      </div>
+      <div><h4>Services</h4><a href="our-work.html">Our Work</a><a href="ugc.html">UGC and video ads</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a></div>
+      <div><h4>Free tools</h4><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a></div>
+      <div><h4>Company</h4><a href="careers.html">Careers</a><a href="index.html#audit">Contact</a><a href="index.html#faq">FAQ</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Moneta. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
+    </div>
   </div>
 </footer>
 </body>
