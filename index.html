@@ -500,42 +500,55 @@
     <span class="pill">Free ad audit</span>
     <h2>Find out where your <span class="serif accent">ad money is going.</span></h2>
     <p class="muted">Send us your website or ad account and we'll send back a free audit with the three biggest fixes, within 3 working days.</p>
-    <form id="audit-form" novalidate>
-      <input name="name" placeholder="Your name" aria-label="Your name" autocomplete="name" required>
-      <input name="business" placeholder="Business name" aria-label="Business name" autocomplete="organization">
-      <input class="full" name="site" placeholder="Website or Instagram link" aria-label="Website or Instagram link">
-      <select class="full" name="need" aria-label="What do you need">
-        <option>More leads or inquiries</option>
-        <option>More online sales</option>
-        <option>A new website or landing page</option>
-        <option>Ad creatives or video editing</option>
-        <option>Not sure yet</option>
-      </select>
-      <button class="btn btn-primary full" type="submit">Send on WhatsApp</button>
-    </form>
-    <p class="hint">Opens WhatsApp with your details filled in. Nothing is stored on this website.</p>
+    <div class="stepper" data-wa="Hi Taher, I would like a free ad audit." id="home-steps">
+  <div class="st-top"><span class="st-count">Step <b>1</b> of 3</span><span class="st-dots"><i class="on"></i><i></i><i></i></span></div>
+  <div class="st-step on" data-q="What do you need most">
+    <h3>What do you need most?</h3>
+    <div class="opts"><button type="button" class="opt" data-v="More inquiries or calls">More inquiries or calls</button><button type="button" class="opt" data-v="More online sales">More online sales</button><button type="button" class="opt" data-v="A new website or landing page">A new website or landing page</button><button type="button" class="opt" data-v="Ad photos and videos">Ad photos and videos</button><button type="button" class="opt" data-v="Not sure yet">Not sure yet</button></div>
+  </div>
+  <div class="st-step" data-q="Monthly ad spend">
+    <h3>Roughly how much do you spend on ads?</h3>
+    <div class="opts"><button type="button" class="opt" data-v="Not running ads yet">Not running ads yet</button><button type="button" class="opt" data-v="Under ₹20,000 / $250 a month">Under ₹20,000 / $250 a month</button><button type="button" class="opt" data-v="₹20,000 to ₹1,00,000 / $250 to $1,200">₹20,000 to ₹1,00,000 / $250 to $1,200</button><button type="button" class="opt" data-v="Over ₹1,00,000 / $1,200 a month">Over ₹1,00,000 / $1,200 a month</button><button type="button" class="opt" data-v="Prefer not to say">Prefer not to say</button></div>
+  </div>
+  <div class="st-step st-last">
+    <h3>Where should we send your audit?</h3>
+    <input name="name" placeholder="Your name" aria-label="Your name" autocomplete="name">
+    <input name="site" placeholder="Website or Instagram link (optional)" aria-label="Website or Instagram link">
+    <button type="button" class="btn btn-primary wa-btn st-send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>Send on WhatsApp</button>
+  </div>
+  <button type="button" class="st-back" hidden>&#8592; Back</button>
+</div>
+<p class="hint center">Three taps, then WhatsApp opens with your answers filled in. Prefer email? <a href="mailto:hello@makemoneta.com?subject=Free%20ad%20audit%20request">hello@makemoneta.com</a></p>
     <p class="muted" style="margin-top:22px">WhatsApp +91 99092 52362 · <a href="mailto:hello@makemoneta.com">hello@makemoneta.com</a> · Working worldwide</p>
   </div>
 </section>
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer big-footer">
   <div class="wrap">
-    <div class="foot-grid foot-4">
+    <div class="ft-top">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:12px"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:26px;height:26px"><circle cx="32" cy="32" r="30" fill="#7b5cff"/><path d="M19 43V22l13 13 13-13v21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="square"/></svg><span>Moneta</span></a>
-        <p>Performance marketing agency. Based in India, working worldwide.</p>
-        <p><a href="https://wa.me/919909252362" target="_blank" rel="noopener" style="display:inline;color:var(--text)">WhatsApp +91 99092 52362</a><br><a href="mailto:hello@makemoneta.com" style="display:inline;color:var(--text)">hello@makemoneta.com</a></p>
+        <p class="ft-hello">Let's talk.</p>
+        <p class="ft-sub">Performance marketing agency. Based in India, working worldwide.</p>
       </div>
-      <div><h4>Services</h4><a href="our-work.html">Our Work</a><a href="ugc.html">UGC and video ads</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a></div>
-      <div><h4>Free tools</h4><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a></div>
-      <div><h4>Company</h4><a href="careers.html">Careers</a><a href="index.html#audit">Contact</a><a href="index.html#faq">FAQ</a></div>
+      <div class="ft-contact">
+        <a href="https://wa.me/919909252362" target="_blank" rel="noopener">WhatsApp +91 99092 52362</a>
+        <a href="mailto:hello@makemoneta.com">hello@makemoneta.com</a>
+      </div>
+      <a class="ft-top-link" href="#">Back to top &#8593;</a>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Moneta. All rights reserved.</span>
-      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
+    <div class="ft-links">
+      <a href="index.html">Home</a><a href="our-work.html">Our Work</a><a href="ugc.html">UGC</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a><a href="careers.html">Careers</a>
     </div>
+  </div>
+  <div class="ft-mark" aria-hidden="true">
+    <span>MONETA</span>
+    <div class="ft-art"></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Moneta. All rights reserved.</span>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
   </div>
 </footer>
 
@@ -550,20 +563,121 @@
       document.getElementById(t.getAttribute('aria-controls')).classList.add('active');
     });
   });
-  document.getElementById('audit-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = e.target.elements;
-    var name = f['name'].value.trim();
-    if (!name) { f['name'].focus(); return; }
-    var lines = ['Hi Taher, I would like a free ad audit.', 'Name: ' + name,
-      f['business'].value.trim() ? 'Business: ' + f['business'].value.trim() : '',
-      f['site'].value.trim() ? 'Link: ' + f['site'].value.trim() : '',
-      'Need: ' + f['need'].value].filter(Boolean).join('\n');
-    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines);
-    var w = window.open(url, '_blank');
-    if (w) { w.opener = null; } else { window.location.href = url; }
-  });
 })();
+</script>
+<script>
+document.querySelectorAll('form[data-wa]').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var lines = [form.getAttribute('data-wa')];
+    var first = null, ok = true;
+    Array.prototype.forEach.call(form.elements, function (el) {
+      if (!el.name || !el.getAttribute('data-label')) return;
+      var v = (el.value || '').trim();
+      if (el.required && !v) { ok = false; if (!first) first = el; }
+      if (v) lines.push(el.getAttribute('data-label') + ': ' + v);
+    });
+    if (!ok) { first.focus(); return; }
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
+</script>
+<script>
+document.querySelectorAll('.stepper').forEach(function (st) {
+  var steps = st.querySelectorAll('.st-step'), dots = st.querySelectorAll('.st-dots i'), back = st.querySelector('.st-back'), i = 0, ans = {};
+  function show(n) {
+    i = n;
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === n); });
+    dots.forEach(function (d, k) { d.classList.toggle('on', k <= n); });
+    st.querySelector('.st-count b').textContent = n + 1;
+    back.hidden = n === 0;
+    if (n === steps.length - 1) { var f = st.querySelector('input[name=name]'); if (f) f.focus(); }
+  }
+  st.querySelectorAll('.opt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var step = b.closest('.st-step');
+      step.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+      b.classList.add('sel');
+      ans[step.getAttribute('data-q')] = b.getAttribute('data-v');
+      setTimeout(function () { show(i + 1); }, 180);
+    });
+  });
+  back.addEventListener('click', function () { if (i > 0) show(i - 1); });
+  st.querySelector('.st-send').addEventListener('click', function () {
+    var name = st.querySelector('input[name=name]'), site = st.querySelector('input[name=site]');
+    if (!name.value.trim()) { name.focus(); name.classList.add('err'); return; }
+    var lines = [st.getAttribute('data-wa'), 'Name: ' + name.value.trim()];
+    Object.keys(ans).forEach(function (k) { lines.push(k + ': ' + ans[k]); });
+    if (site.value.trim()) lines.push('Website or Instagram: ' + site.value.trim());
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
+document.querySelectorAll('form[data-wa]').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var lines = [form.getAttribute('data-wa')];
+    var first = null, ok = true;
+    Array.prototype.forEach.call(form.elements, function (el) {
+      if (!el.name || !el.getAttribute('data-label')) return;
+      var v = (el.value || '').trim();
+      if (el.required && !v) { ok = false; if (!first) first = el; }
+      if (v) lines.push(el.getAttribute('data-label') + ': ' + v);
+    });
+    if (!ok) { first.focus(); return; }
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
+</script>
+<script>
+document.querySelectorAll('.stepper').forEach(function (st) {
+  var steps = st.querySelectorAll('.st-step'), dots = st.querySelectorAll('.st-dots i'), back = st.querySelector('.st-back'), i = 0, ans = {};
+  function show(n) {
+    i = n;
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === n); });
+    dots.forEach(function (d, k) { d.classList.toggle('on', k <= n); });
+    st.querySelector('.st-count b').textContent = n + 1;
+    back.hidden = n === 0;
+    if (n === steps.length - 1) { var f = st.querySelector('input[name=name]'); if (f) f.focus(); }
+  }
+  st.querySelectorAll('.opt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var step = b.closest('.st-step');
+      step.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+      b.classList.add('sel');
+      ans[step.getAttribute('data-q')] = b.getAttribute('data-v');
+      setTimeout(function () { show(i + 1); }, 180);
+    });
+  });
+  back.addEventListener('click', function () { if (i > 0) show(i - 1); });
+  st.querySelector('.st-send').addEventListener('click', function () {
+    var name = st.querySelector('input[name=name]'), site = st.querySelector('input[name=site]');
+    if (!name.value.trim()) { name.focus(); name.classList.add('err'); return; }
+    var lines = [st.getAttribute('data-wa'), 'Name: ' + name.value.trim()];
+    Object.keys(ans).forEach(function (k) { lines.push(k + ': ' + ans[k]); });
+    if (site.value.trim()) lines.push('Website or Instagram: ' + site.value.trim());
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
+document.querySelectorAll('form[data-wa]').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var lines = [form.getAttribute('data-wa')];
+    var first = null, ok = true;
+    Array.prototype.forEach.call(form.elements, function (el) {
+      if (!el.name || !el.getAttribute('data-label')) return;
+      var v = (el.value || '').trim();
+      if (el.required && !v) { ok = false; if (!first) first = el; }
+      if (v) lines.push(el.getAttribute('data-label') + ': ' + v);
+    });
+    if (!ok) { first.focus(); return; }
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
 </script>
 </body>
 </html>

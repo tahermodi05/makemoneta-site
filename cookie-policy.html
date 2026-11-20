@@ -41,37 +41,75 @@
 <main>
 <div class="legal"><div class="wrap"><h1>Cookie Policy</h1><p class="updated">Last updated: 20 November 2026</p>
 <p>This page explains how makemoneta.com uses cookies.</p>
-<h2>What we use today</h2><p>This website does not set advertising or analytics cookies. Our forms do not store your details on the site; they open WhatsApp with your message filled in.</p>
+<h2>What we use today</h2><p>This website does not set advertising or analytics cookies. Our forms do not store anything on this website; they open WhatsApp with your message filled in.</p>
 <h2>Third-party services</h2><ul><li>Fonts are loaded from Google Fonts, which receives your IP address when a page loads.</li><li>Our hosting provider (GitHub Pages) may keep standard server logs for security.</li><li>If you click a WhatsApp link, WhatsApp (Meta) handles that conversation under its own policies.</li></ul>
 <h2>If this changes</h2><p>If we add analytics or advertising tools, such as Google Analytics or the Meta Pixel, we will update this page and ask for your consent where the law requires it.</p>
 <h2>Contact</h2><p>Questions: <a href="mailto:hello@makemoneta.com">hello@makemoneta.com</a>.</p></div></div>
 </main>
-<footer class="site-footer">
+<footer class="site-footer big-footer">
   <div class="wrap">
-    <div class="foot-grid foot-4">
+    <div class="ft-top">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:12px"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:26px;height:26px"><circle cx="32" cy="32" r="30" fill="#7b5cff"/><path d="M19 43V22l13 13 13-13v21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="square"/></svg><span>Moneta</span></a>
-        <p>Performance marketing agency. Based in India, working worldwide.</p>
-        <p><a href="https://wa.me/919909252362" target="_blank" rel="noopener" style="display:inline;color:var(--text)">WhatsApp +91 99092 52362</a><br><a href="mailto:hello@makemoneta.com" style="display:inline;color:var(--text)">hello@makemoneta.com</a></p>
+        <p class="ft-hello">Let's talk.</p>
+        <p class="ft-sub">Performance marketing agency. Based in India, working worldwide.</p>
       </div>
-      <div><h4>Services</h4><a href="our-work.html">Our Work</a><a href="ugc.html">UGC and video ads</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a></div>
-      <div><h4>Free tools</h4><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a></div>
-      <div><h4>Company</h4><a href="careers.html">Careers</a><a href="index.html#audit">Contact</a><a href="index.html#faq">FAQ</a></div>
+      <div class="ft-contact">
+        <a href="https://wa.me/919909252362" target="_blank" rel="noopener">WhatsApp +91 99092 52362</a>
+        <a href="mailto:hello@makemoneta.com">hello@makemoneta.com</a>
+      </div>
+      <a class="ft-top-link" href="#">Back to top &#8593;</a>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Moneta. All rights reserved.</span>
-      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
+    <div class="ft-links">
+      <a href="index.html">Home</a><a href="our-work.html">Our Work</a><a href="ugc.html">UGC</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a><a href="careers.html">Careers</a>
     </div>
+  </div>
+  <div class="ft-mark" aria-hidden="true">
+    <span>MONETA</span>
+    <div class="ft-art"></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Moneta. All rights reserved.</span>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
   </div>
 </footer>
 <script>
+document.querySelectorAll('.stepper').forEach(function (st) {
+  var steps = st.querySelectorAll('.st-step'), dots = st.querySelectorAll('.st-dots i'), back = st.querySelector('.st-back'), i = 0, ans = {};
+  function show(n) {
+    i = n;
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === n); });
+    dots.forEach(function (d, k) { d.classList.toggle('on', k <= n); });
+    st.querySelector('.st-count b').textContent = n + 1;
+    back.hidden = n === 0;
+    if (n === steps.length - 1) { var f = st.querySelector('input[name=name]'); if (f) f.focus(); }
+  }
+  st.querySelectorAll('.opt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var step = b.closest('.st-step');
+      step.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+      b.classList.add('sel');
+      ans[step.getAttribute('data-q')] = b.getAttribute('data-v');
+      setTimeout(function () { show(i + 1); }, 180);
+    });
+  });
+  back.addEventListener('click', function () { if (i > 0) show(i - 1); });
+  st.querySelector('.st-send').addEventListener('click', function () {
+    var name = st.querySelector('input[name=name]'), site = st.querySelector('input[name=site]');
+    if (!name.value.trim()) { name.focus(); name.classList.add('err'); return; }
+    var lines = [st.getAttribute('data-wa'), 'Name: ' + name.value.trim()];
+    Object.keys(ans).forEach(function (k) { lines.push(k + ': ' + ans[k]); });
+    if (site.value.trim()) lines.push('Website or Instagram: ' + site.value.trim());
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
 document.querySelectorAll('form[data-wa]').forEach(function (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var lines = [form.getAttribute('data-wa')];
     var first = null, ok = true;
     Array.prototype.forEach.call(form.elements, function (el) {
-      if (!el.name) return;
+      if (!el.name || !el.getAttribute('data-label')) return;
       var v = (el.value || '').trim();
       if (el.required && !v) { ok = false; if (!first) first = el; }
       if (v) lines.push(el.getAttribute('data-label') + ': ' + v);

@@ -70,40 +70,78 @@
 </section><section>
   <div class="wrap">
     <div class="section-head"><span class="pill">Free sample</span><h2>Send us one video. <span class="serif accent">We re-edit it free.</span></h2><p>Share a raw or old video and see what we would do with it.</p></div>
-    <form class="wa-form" data-wa="Hi Taher, I would like a free video re-edit." novalidate>
-  <input name="name" data-label="Your name" placeholder="Your name" aria-label="Your name" required><input name="brand" data-label="Brand or business" placeholder="Brand or business" aria-label="Brand or business"><input class="full" name="link" data-label="Link to the video or your Instagram" placeholder="Link to the video or your Instagram" aria-label="Link to the video or your Instagram">
-  <button class="btn btn-primary full" type="submit">Send on WhatsApp</button>
+    <form class="wa-form lead-form" data-wa="Hi Taher, I would like a free video re-edit." data-form="video-reedit" novalidate>
+  <input class="full" name="name" data-label="Name" placeholder="Your name" aria-label="Your name" autocomplete="name" required><input class="full" name="brand" data-label="Brand or business" placeholder="Brand or business" aria-label="Brand or business"><input class="full" name="link" data-label="Link to the video or your Instagram" placeholder="Link to the video or your Instagram" aria-label="Link to the video or your Instagram">
+  <button class="btn btn-primary full wa-btn" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>Get my free re-edit</button>
 </form>
-<p class="hint center">Opens WhatsApp with your details filled in. Nothing is stored on this website.</p>
+<p class="hint center">Opens WhatsApp with your details filled in, so we can reply straight away. Prefer email? <a href="mailto:hello@makemoneta.com?subject=Free%20video%20re-edit%20request">hello@makemoneta.com</a></p>
   </div>
 </section>
 </main>
-<footer class="site-footer">
+<footer class="site-footer big-footer">
   <div class="wrap">
-    <div class="foot-grid foot-4">
+    <div class="ft-top">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:12px"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:26px;height:26px"><circle cx="32" cy="32" r="30" fill="#7b5cff"/><path d="M19 43V22l13 13 13-13v21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="square"/></svg><span>Moneta</span></a>
-        <p>Performance marketing agency. Based in India, working worldwide.</p>
-        <p><a href="https://wa.me/919909252362" target="_blank" rel="noopener" style="display:inline;color:var(--text)">WhatsApp +91 99092 52362</a><br><a href="mailto:hello@makemoneta.com" style="display:inline;color:var(--text)">hello@makemoneta.com</a></p>
+        <p class="ft-hello">Let's talk.</p>
+        <p class="ft-sub">Performance marketing agency. Based in India, working worldwide.</p>
       </div>
-      <div><h4>Services</h4><a href="our-work.html">Our Work</a><a href="ugc.html">UGC and video ads</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a></div>
-      <div><h4>Free tools</h4><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a></div>
-      <div><h4>Company</h4><a href="careers.html">Careers</a><a href="index.html#audit">Contact</a><a href="index.html#faq">FAQ</a></div>
+      <div class="ft-contact">
+        <a href="https://wa.me/919909252362" target="_blank" rel="noopener">WhatsApp +91 99092 52362</a>
+        <a href="mailto:hello@makemoneta.com">hello@makemoneta.com</a>
+      </div>
+      <a class="ft-top-link" href="#">Back to top &#8593;</a>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Moneta. All rights reserved.</span>
-      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
+    <div class="ft-links">
+      <a href="index.html">Home</a><a href="our-work.html">Our Work</a><a href="ugc.html">UGC</a><a href="product-photoshoot.html">Product Photoshoot</a><a href="store-creation.html">Store creation</a><a href="courses.html">Courses</a><a href="ad-account-audit.html">Ad Account Audit</a><a href="landing-page-audit.html">Landing Page Audit</a><a href="careers.html">Careers</a>
     </div>
+  </div>
+  <div class="ft-mark" aria-hidden="true">
+    <span>MONETA</span>
+    <div class="ft-art"></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Moneta. All rights reserved.</span>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a></nav>
   </div>
 </footer>
 <script>
+document.querySelectorAll('.stepper').forEach(function (st) {
+  var steps = st.querySelectorAll('.st-step'), dots = st.querySelectorAll('.st-dots i'), back = st.querySelector('.st-back'), i = 0, ans = {};
+  function show(n) {
+    i = n;
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === n); });
+    dots.forEach(function (d, k) { d.classList.toggle('on', k <= n); });
+    st.querySelector('.st-count b').textContent = n + 1;
+    back.hidden = n === 0;
+    if (n === steps.length - 1) { var f = st.querySelector('input[name=name]'); if (f) f.focus(); }
+  }
+  st.querySelectorAll('.opt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var step = b.closest('.st-step');
+      step.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+      b.classList.add('sel');
+      ans[step.getAttribute('data-q')] = b.getAttribute('data-v');
+      setTimeout(function () { show(i + 1); }, 180);
+    });
+  });
+  back.addEventListener('click', function () { if (i > 0) show(i - 1); });
+  st.querySelector('.st-send').addEventListener('click', function () {
+    var name = st.querySelector('input[name=name]'), site = st.querySelector('input[name=site]');
+    if (!name.value.trim()) { name.focus(); name.classList.add('err'); return; }
+    var lines = [st.getAttribute('data-wa'), 'Name: ' + name.value.trim()];
+    Object.keys(ans).forEach(function (k) { lines.push(k + ': ' + ans[k]); });
+    if (site.value.trim()) lines.push('Website or Instagram: ' + site.value.trim());
+    var url = 'https://wa.me/919909252362?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank'); if (w) { w.opener = null; } else { window.location.href = url; }
+  });
+});
 document.querySelectorAll('form[data-wa]').forEach(function (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var lines = [form.getAttribute('data-wa')];
     var first = null, ok = true;
     Array.prototype.forEach.call(form.elements, function (el) {
-      if (!el.name) return;
+      if (!el.name || !el.getAttribute('data-label')) return;
       var v = (el.value || '').trim();
       if (el.required && !v) { ok = false; if (!first) first = el; }
       if (v) lines.push(el.getAttribute('data-label') + ': ' + v);
